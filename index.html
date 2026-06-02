@@ -416,28 +416,67 @@ const TRADUCCIONES={
 
 let currentLang='es';
 
-function renderProductos(lang,filtro){
-  const grid=document.getElementById('catalogo');
-  const t=TRADUCCIONES[lang];
-  const query=(filtro||'').toLowerCase().trim();
-  const visibles=PRODUCTOS.filter(p=>p[lang].toLowerCase().includes(query));
-  grid.innerHTML='';
-  if(visibles.length===0){
-    grid.innerHTML='<p style="text-align:center;color:rgba(255,255,255,.4);grid-column:1/-1;padding:40px 0">No se encontraron productos.</p>';
+function renderProductos(lang, filtro) {
+  const grid = document.getElementById('catalogo');
+  const t = TRADUCCIONES[lang];
+  const query = (filtro || '').toLowerCase().trim();
+  const visibles = PRODUCTOS.filter(p => p[lang].toLowerCase().includes(query));
+  grid.innerHTML = '';
+  if (!visibles.length) {
+    grid.innerHTML = '<p style="text-align:center;color:rgba(255,255,255,.4);grid-column:1/-1;padding:40px 0">No se encontraron productos.</p>';
     return;
   }
-  visibles.forEach(function(p){
-    const modelosTexto=p.modelos===1?t['prod-modelos-1']:p.modelos+' '+t['prod-modelos-n'];
-    const card=document.createElement('article');
-    card.className='product-card';
-    const imgHtml=p.img?'<img src="'+p.img+'" alt="'+p[lang]+'" loading="lazy" onerror="this.style.display=\'none\'">':'';
-    card.innerHTML=
-      '<div class="product-card__img">'+imgHtml+'<span class="fallback-icon">'+p.icono+'</span></div>'+
-      '<div class="product-card__body">'+
-      '<h3 class="product-card__title">'+p[lang]+'</h3>'+
-      '<p class="product-card__desc">'+t['prod-desc']+'</p>'+
-      '<span class="product-card__badge">'+t['prod-badge']+' · '+modelosTexto+'</span>'+
-      '</div>';
+  visibles.forEach(function(p) {
+    const modelosTexto = p.modelos === 1 ? t['prod-modelos-1'] : p.modelos + ' ' + t['prod-modelos-n'];
+    const imgs = p.imgs && p.imgs.length ? p.imgs : [];
+    const soloUna = imgs.length <= 1;
+
+    // Imágenes
+    const imgsHtml = imgs.length
+      ? imgs.map((src, i) =>
+          `<img src="${src}" alt="${p[lang]}" loading="lazy" class="${i===0?'active':''}" onerror="this.style.display='none'">`
+        ).join('')
+      : `<span style="font-size:2.8rem">${p.icono}</span>`;
+
+    // Puntos del carrusel
+    const dotsHtml = imgs.length > 1
+      ? `<div class="carousel-dots">${imgs.map((_,i)=>`<button class="carousel-dot${i===0?' active':''}" data-idx="${i}"></button>`).join('')}</div>`
+      : '';
+
+    const card = document.createElement('article');
+    card.className = 'product-card';
+    card.innerHTML =
+      `<div class="product-card__img">
+        ${imgsHtml}
+        <button class="carousel-btn carousel-btn--prev${soloUna?' hidden':''}">&#8249;</button>
+        <button class="carousel-btn carousel-btn--next${soloUna?' hidden':''}">&#8250;</button>
+        ${dotsHtml}
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">${p[lang]}</h3>
+        <p class="product-card__desc">${t['prod-desc']}</p>
+        <span class="product-card__badge">${t['prod-badge']} · ${modelosTexto}</span>
+      </div>`;
+
+    // Lógica del carrusel
+    if (!soloUna) {
+      const imgEls = card.querySelectorAll('.product-card__img img');
+      const dots   = card.querySelectorAll('.carousel-dot');
+      let current  = 0;
+
+      function goTo(n) {
+        imgEls[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + imgEls.length) % imgEls.length;
+        imgEls[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      card.querySelector('.carousel-btn--prev').addEventListener('click', () => goTo(current - 1));
+      card.querySelector('.carousel-btn--next').addEventListener('click', () => goTo(current + 1));
+      dots.forEach(dot => dot.addEventListener('click', () => goTo(+dot.dataset.idx)));
+    }
+
     grid.appendChild(card);
   });
 }
