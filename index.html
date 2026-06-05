@@ -686,7 +686,7 @@ function addFromModal() {
 function cotizarWa() {
   if (!productoActual) return;
   const qty = document.getElementById('qtyInput').value;
-  const msg = `¡Hola KAUCHO PLUS!\n\nQuisiera cotizar:\n• ${productoActual[currentLang]} × ${qty} unidad(es)\n\n¿Me pueden dar información de precio y disponibilidad?`;
+  const msg = `¡Hola KAUCHO PLUS S.A.S!\n\nQuisiera cotizar:\n• ${productoActual[currentLang]} × ${qty} unidad(es)\n\n¿Me pueden dar información de precio y disponibilidad?`;
   window.open('https://wa.me/593991863635?text=' + encodeURIComponent(msg), '_blank', 'noopener');
 }
 
@@ -728,7 +728,7 @@ function toggleCart() { document.getElementById('cartPanel').classList.toggle('o
 function enviarCarritoWa() {
   if (!carrito.length) return;
   const lista = carrito.map(i => `• ${i[currentLang]} × ${i.qty}`).join('\n');
-  const msg = `¡Hola KAUCHO PLUS!\n\nQuisiera cotizar:\n\n${lista}\n\n¿Me pueden dar precios y disponibilidad?`;
+  const msg = `¡Hola KAUCHO PLUS S.A.S!\n\nQuisiera cotizar:\n\n${lista}\n\n¿Me pueden dar precios y disponibilidad?`;
   window.open('https://wa.me/593991863635?text=' + encodeURIComponent(msg), '_blank', 'noopener');
 }
 
@@ -779,7 +779,7 @@ function manejarFormulario(e){
     alert(currentLang==='es'?'Por favor complete los campos obligatorios.':'Please fill in the required fields.');
     return;
   }
-  const texto='¡Hola KAUCHO PLUS!\n\nNombre: '+nombre+'\n'+(empresa?'Empresa: '+empresa+'\n':'')+'Correo: '+correo+'\n\nMensaje:\n'+mensaje;
+  const texto='¡Hola KAUCHO PLUS S.A.S!\n\nNombre: '+nombre+'\n'+(empresa?'Empresa: '+empresa+'\n':'')+'Correo: '+correo+'\n\nMensaje:\n'+mensaje;
   window.open('https://wa.me/593991863635?text='+encodeURIComponent(texto),'_blank','noopener');
 }
 
