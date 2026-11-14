@@ -4,796 +4,211 @@
 <meta name="google-site-verification" content="5qI0NWNLIntv3HKGurnZVgDAs_kqbR2NeD8RK_GDdCM" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>KAUCHO PLUS S.A.S.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root{--color-dorado:#D1B04D;--color-dorado-light:#E8CC78;--color-azul:#4E6676;--color-gris-dark:#1E2427;--color-gris-mid:#353E43;--color-fondo:#F2F0EF;--color-blanco:#FAFAF8;--font-display:'Bebas Neue',sans-serif;--font-body:'DM Sans',sans-serif;--space-xs:8px;--space-sm:16px;--space-md:24px;--space-lg:48px;--space-xl:80px;--space-xxl:120px;--container-max:1300px;--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-pill:40px;--transition-fast:0.2s ease;--transition-normal:0.3s ease}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-body);background-color:var(--color-fondo);color:var(--color-gris-mid);overflow-x:hidden;line-height:1.6}
-ul{list-style:none}
-a{text-decoration:none;color:inherit}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--color-gris-dark)}
-::-webkit-scrollbar-thumb{background:var(--color-dorado);border-radius:var(--radius-sm)}
-.container{width:90%;max-width:var(--container-max);margin-inline:auto}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes zoomBg{from{transform:scale(1.04)}to{transform:scale(1.12)}}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-xs);padding:14px 32px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:600;font-size:.9rem;letter-spacing:.5px;cursor:pointer;border:none;transition:background var(--transition-fast),transform var(--transition-fast),box-shadow var(--transition-fast)}
-.btn--hero{background:var(--color-dorado);color:var(--color-gris-dark)}
-.btn--hero:hover{background:var(--color-dorado-light);transform:translateY(-2px);box-shadow:0 10px 30px rgba(209,176,77,.35)}
-.btn--full{width:100%;background:var(--color-dorado);color:var(--color-gris-dark)}
-.btn--full:hover{background:var(--color-dorado-light);transform:translateY(-2px);box-shadow:0 10px 30px rgba(209,176,77,.3)}
-.header{position:fixed;top:0;left:0;width:100%;background:rgba(30,36,39,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(209,176,77,.12);padding:16px 0;z-index:1000;transition:padding var(--transition-normal)}
-.header--scrolled{padding:10px 0}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md)}
-.nav__logo{font-family:var(--font-display);font-size:26px;color:var(--color-dorado);letter-spacing:3px;line-height:1}
-.nav__logo span{color:white}
-.nav__links{display:flex;gap:var(--space-lg)}
-.nav__link{color:rgba(255,255,255,.7);font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase;transition:color var(--transition-fast)}
-.nav__link:hover{color:var(--color-dorado)}
-.nav__lang{display:flex;gap:6px}
-.lang-btn{background:transparent;border:1px solid rgba(209,176,77,.35);color:rgba(255,255,255,.55);padding:5px 12px;font-size:.72rem;letter-spacing:1px;border-radius:var(--radius-sm);font-family:var(--font-body);cursor:pointer;transition:background var(--transition-fast),color var(--transition-fast),border-color var(--transition-fast)}
-.lang-btn:hover,.lang-btn--active{background:var(--color-dorado);color:var(--color-gris-dark);border-color:var(--color-dorado);font-weight:600}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background-color:var(--color-gris-dark)}
-.hero__bg{position:absolute;inset:0;background-image:url('logo.png');background-size:120%;background-position:center;background-repeat:no-repeat;opacity:.12;animation:zoomBg 20s ease-in-out infinite alternate}
-.hero__cut{position:absolute;bottom:-1px;left:0;right:0;height:90px;background-color:var(--color-fondo);clip-path:polygon(0 100%,100% 100%,100% 0)}
-.hero__content{position:relative;z-index:1;padding:0 var(--space-md)}
-.hero__eyebrow{display:inline-block;font-size:.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--color-dorado);border:1px solid rgba(209,176,77,.3);padding:6px 18px;border-radius:var(--radius-pill);margin-bottom:var(--space-md);animation:fadeUp .8s .1s ease both}
-.hero__title{font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7rem);color:white;line-height:.95;letter-spacing:2px;animation:fadeUp .8s .25s ease both}
-.hero__title em{font-style:normal;color:var(--color-dorado)}
-.hero__text{color:rgba(255,255,255,.6);font-size:1.05rem;font-weight:300;max-width:600px;margin:var(--space-md) auto var(--space-lg);line-height:1.75;animation:fadeUp .8s .4s ease both}
-.btn--hero{animation:fadeUp .8s .55s ease both}
-.section{padding:var(--space-xxl) 0}
-.section--dark{background-color:var(--color-gris-dark)}
-.section--light{background-color:var(--color-blanco)}
-.section--contact{background-color:var(--color-fondo)}
-.section__header{text-align:center;margin-bottom:var(--space-xl)}
-.section__label{display:block;font-size:.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--color-dorado);margin-bottom:var(--space-sm)}
-.section__title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:white;letter-spacing:2px;line-height:1}
-.section__title--dark{color:var(--color-azul)}
-.section__sub{margin-top:var(--space-sm);color:rgba(255,255,255,.4);font-size:.92rem;font-weight:300;max-width:480px;margin-inline:auto}
-.section__sub--dark{color:rgba(53,62,67,.55)}
-.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;border:1px solid rgba(209,176,77,.1)}
-.about-card{background:rgba(255,255,255,.03);padding:40px 34px;border:1px solid rgba(209,176,77,.07);transition:background var(--transition-normal)}
-.about-card:hover{background:rgba(209,176,77,.06)}
-.about-card__icon{font-size:2rem;margin-bottom:var(--space-md)}
-.about-card__title{font-family:var(--font-display);font-size:1.6rem;color:var(--color-dorado);letter-spacing:2px;margin-bottom:var(--space-sm)}
-.about-card__text{color:rgba(255,255,255,.5);font-size:.9rem;font-weight:300;line-height:1.8}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));border:1px solid rgba(209,176,77,.1);margin-top:var(--space-xl)}
-.stat{display:flex;flex-direction:column;align-items:center;padding:32px var(--space-md);border-right:1px solid rgba(209,176,77,.1);text-align:center}
-.stat:last-child{border-right:none}
-.stat__num{font-family:var(--font-display);font-size:3rem;color:var(--color-dorado);letter-spacing:2px;line-height:1}
-.stat__label{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:8px}
-/* SERVICIOS */
-.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.servicio-card{background:white;border:1px solid rgba(78,102,118,.12);border-radius:var(--radius-md);padding:36px 30px;transition:transform var(--transition-normal),box-shadow var(--transition-normal),border-color var(--transition-normal)}
-.servicio-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.08);border-color:var(--color-dorado)}
-.servicio-card__icon{font-size:2.2rem;margin-bottom:var(--space-sm)}
-.servicio-card__title{font-family:var(--font-display);font-size:1.5rem;color:var(--color-azul);letter-spacing:2px;margin-bottom:var(--space-sm)}
-.servicio-card__list{display:flex;flex-direction:column;gap:8px}
-.servicio-card__list li{font-size:.85rem;color:rgba(53,62,67,.65);font-weight:300;line-height:1.5;padding-left:16px;position:relative}
-.servicio-card__list li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--color-dorado)}
-/* PRODUCTOS */
-.search{position:relative;display:flex;justify-content:center;margin-bottom:var(--space-xl)}
-.search__input{width:min(580px,100%);padding:14px 50px 14px 20px;border:1.5px solid rgba(209,176,77,.2);border-radius:var(--radius-sm);font-size:.92rem;font-family:var(--font-body);background:rgba(255,255,255,.06);color:white;outline:none;transition:border-color var(--transition-fast)}
-.search__input:focus{border-color:var(--color-dorado)}
-.search__input::placeholder{color:rgba(255,255,255,.3)}
-.search__icon{position:absolute;right:calc(50% - min(290px,50%) + 14px);top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
-.product-card{background:rgba(255,255,255,.05);border:1px solid rgba(209,176,77,.1);border-radius:var(--radius-md);overflow:hidden;transition:transform var(--transition-normal),box-shadow var(--transition-normal),border-color var(--transition-normal);cursor:default}
-.product-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.3);border-color:var(--color-dorado)}
-.product-card__img{position:relative;width:100%;height:160px;background:rgba(78,102,118,.15);overflow:hidden}
-.product-card__img img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.4s ease}
-.product-card__img img.active{opacity:1}
-.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:white;border:none;width:26px;height:26px;border-radius:50%;font-size:.8rem;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
-.carousel-btn:hover{background:rgba(209,176,77,.8)}
-.carousel-btn--prev{left:6px}
-.carousel-btn--next{right:6px}
-.carousel-dots{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:4px;z-index:2}
-.carousel-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);border:none;cursor:pointer;padding:0;transition:background 0.2s}
-.carousel-dot.active{background:var(--color-dorado)}
-.carousel-btn.hidden{display:none}
-.product-card__body{padding:20px 18px}
-.product-card__title{font-family:var(--font-display);font-size:1.2rem;color:var(--color-dorado-light);letter-spacing:1.5px;margin-bottom:8px}
-.product-card__desc{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.6;font-weight:300}
-.product-card__badge{display:inline-block;font-size:.62rem;letter-spacing:1.5px;text-transform:uppercase;background:rgba(209,176,77,.12);color:var(--color-dorado);padding:3px 10px;border-radius:var(--radius-pill);margin-top:var(--space-sm);font-weight:500}
-/* CONTACTO */
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.contact-info__title{font-family:var(--font-display);font-size:2rem;color:var(--color-azul);letter-spacing:2px;margin-bottom:var(--space-sm)}
-.contact-info__text{font-size:.9rem;color:rgba(53,62,67,.6);line-height:1.8;font-weight:300;margin-bottom:var(--space-lg)}
-.contact-details{display:flex;flex-direction:column;gap:var(--space-sm)}
-.contact-detail{display:flex;align-items:center;gap:var(--space-sm);font-size:.9rem;color:var(--color-gris-mid)}
-.contact-detail__icon{width:36px;height:36px;background:rgba(78,102,118,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.contact-form{background:white;padding:40px;border-radius:var(--radius-md);box-shadow:0 12px 40px rgba(0,0,0,.07)}
-.form-group{margin-bottom:18px}
-.form-label{display:block;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(53,62,67,.5);margin-bottom:7px;font-weight:500}
-.form-input{width:100%;padding:12px 16px;border:1.5px solid rgba(78,102,118,.15);border-radius:var(--radius-sm);font-size:.9rem;font-family:var(--font-body);background:var(--color-fondo);color:var(--color-gris-mid);outline:none;transition:border-color var(--transition-fast),background var(--transition-fast);resize:none}
-.form-input:focus{border-color:var(--color-dorado);background:white}
-.form-input::placeholder{color:rgba(53,62,67,.35)}
-.form-input--textarea{height:130px}
-.footer{background:var(--color-gris-dark);color:rgba(255,255,255,.3);text-align:center;padding:28px var(--space-md);font-size:.8rem;letter-spacing:1px;border-top:1px solid rgba(209,176,77,.08)}
-.footer strong{color:var(--color-dorado)}
-.whatsapp-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 6px 24px rgba(37,211,102,.4);z-index:999;transition:transform var(--transition-fast),box-shadow var(--transition-fast)}
-.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.55)}
-@media(max-width:900px){.contact-wrap{grid-template-columns:1fr;gap:var(--space-lg)}}
-@media(max-width:680px){.nav__links{display:none}.section{padding:var(--space-xl) 0}.stats{grid-template-columns:1fr 1fr}.stat{border-right:none;border-bottom:1px solid rgba(209,176,77,.1)}.stat:last-child,.stat:nth-child(2){border-bottom:none}.contact-form{padding:var(--space-md)}}
-/* CARRITO BTN HEADER */
-.cart-btn{position:relative;background:transparent;border:1px solid rgba(209,176,77,.35);color:rgba(255,255,255,.8);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;transition:background var(--transition-fast),border-color var(--transition-fast)}
-.cart-btn:hover{background:var(--color-dorado);border-color:var(--color-dorado)}
-.cart-count{position:absolute;top:-5px;right:-5px;background:var(--color-dorado);color:var(--color-gris-dark);font-size:.6rem;font-weight:700;width:17px;height:17px;border-radius:50%;display:none;align-items:center;justify-content:center;font-family:var(--font-body)}
-.cart-count.visible{display:flex}
-.nav__right{display:flex;align-items:center;gap:var(--space-sm)}
-/* MODAL PRODUCTO */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.3s ease;backdrop-filter:blur(4px)}
-.modal-overlay.open{opacity:1;pointer-events:all}
-.modal{background:var(--color-gris-dark);border:1px solid rgba(209,176,77,.15);border-radius:var(--radius-lg);width:100%;max-width:860px;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;position:relative;transform:scale(.95);transition:transform 0.3s ease}
-.modal-overlay.open .modal{transform:scale(1)}
-.modal__close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.08);border:none;color:white;width:34px;height:34px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;transition:background var(--transition-fast)}
-.modal__close:hover{background:rgba(209,176,77,.3)}
-.modal__gallery{position:relative;background:rgba(78,102,118,.15);min-height:320px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:var(--radius-lg) 0 0 var(--radius-lg)}
-.modal__gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 0.35s ease;padding:16px}
-.modal__gallery img.active{opacity:1}
-.modal__gallery .fallback-icon{font-size:5rem}
-.modal__nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);color:white;border:none;width:34px;height:34px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;z-index:2}
-.modal__nav:hover{background:rgba(209,176,77,.8)}
-.modal__nav--prev{left:10px}
-.modal__nav--next{right:10px}
-.modal__nav.hidden{display:none}
-.modal__thumbs{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
-.modal__thumb{width:44px;height:44px;border-radius:var(--radius-sm);overflow:hidden;border:2px solid transparent;cursor:pointer;flex-shrink:0;transition:border-color 0.2s}
-.modal__thumb img{width:100%;height:100%;object-fit:cover}
-.modal__thumb.active{border-color:var(--color-dorado)}
-.modal__info{padding:40px 32px;display:flex;flex-direction:column;gap:16px}
-.modal__label{font-size:.65rem;letter-spacing:4px;text-transform:uppercase;color:var(--color-dorado)}
-.modal__title{font-family:var(--font-display);font-size:2.4rem;color:white;letter-spacing:2px;line-height:1}
-.modal__badge{display:inline-block;font-size:.65rem;letter-spacing:1.5px;text-transform:uppercase;background:rgba(209,176,77,.12);color:var(--color-dorado);padding:4px 12px;border-radius:var(--radius-pill);font-weight:500}
-.modal__desc{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.8;font-weight:300}
-.modal__qty{display:flex;align-items:center;gap:12px;margin-top:4px}
-.modal__qty label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4)}
-.qty-ctrl{display:flex;align-items:center;border:1px solid rgba(209,176,77,.25);border-radius:var(--radius-sm);overflow:hidden}
-.qty-btn{background:rgba(209,176,77,.08);border:none;color:var(--color-dorado);width:32px;height:32px;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
-.qty-btn:hover{background:rgba(209,176,77,.2)}
-.qty-input{width:44px;height:32px;background:transparent;border:none;border-left:1px solid rgba(209,176,77,.15);border-right:1px solid rgba(209,176,77,.15);color:white;text-align:center;font-family:var(--font-body);font-size:.9rem;outline:none}
-.modal__note{font-size:.78rem;color:rgba(255,255,255,.3);font-style:italic}
-.modal__actions{display:flex;flex-direction:column;gap:10px;margin-top:auto}
-.btn--add{background:var(--color-dorado);color:var(--color-gris-dark);border:none;padding:13px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.88rem;cursor:pointer;transition:background var(--transition-fast),transform var(--transition-fast)}
-.btn--add:hover{background:var(--color-dorado-light);transform:translateY(-2px)}
-.btn--wa{background:transparent;border:1px solid #25D366;color:#25D366;padding:11px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:600;font-size:.85rem;cursor:pointer;transition:background 0.2s}
-.btn--wa:hover{background:#25D366;color:white}
-@media(max-width:640px){.modal{grid-template-columns:1fr}.modal__gallery{min-height:220px;border-radius:var(--radius-lg) var(--radius-lg) 0 0}.modal__info{padding:24px 20px}}
-/* PANEL CARRITO */
-.cart-panel{position:fixed;top:0;right:0;width:360px;max-width:100vw;height:100vh;background:var(--color-gris-dark);border-left:1px solid rgba(209,176,77,.12);z-index:1500;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 0.35s ease}
-.cart-panel.open{transform:translateX(0)}
-.cart-panel__head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(209,176,77,.1)}
-.cart-panel__title{font-family:var(--font-display);font-size:1.5rem;color:var(--color-dorado);letter-spacing:2px}
-.cart-panel__close{background:transparent;border:none;color:rgba(255,255,255,.5);font-size:1.3rem;cursor:pointer;transition:color 0.2s}
-.cart-panel__close:hover{color:white}
-.cart-panel__body{flex:1;overflow-y:auto;padding:20px 24px;display:flex;flex-direction:column;gap:14px}
-.cart-empty{text-align:center;color:rgba(255,255,255,.25);font-size:.9rem;margin-top:60px}
-.cart-empty span{font-size:3rem;display:block;margin-bottom:12px}
-.cart-item{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(209,176,77,.08);border-radius:var(--radius-md);padding:12px}
-.cart-item__img{width:54px;height:54px;border-radius:var(--radius-sm);overflow:hidden;flex-shrink:0;background:rgba(78,102,118,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
-.cart-item__img img{width:100%;height:100%;object-fit:cover}
-.cart-item__info{flex:1;min-width:0}
-.cart-item__name{font-family:var(--font-display);font-size:1rem;color:var(--color-dorado-light);letter-spacing:1px}
-.cart-item__qty{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:3px}
-.cart-item__remove{background:transparent;border:none;color:rgba(255,255,255,.25);font-size:1rem;cursor:pointer;transition:color 0.2s;padding:2px;flex-shrink:0}
-.cart-item__remove:hover{color:#e55}
-.cart-panel__foot{padding:20px 24px;border-top:1px solid rgba(209,176,77,.1);display:flex;flex-direction:column;gap:12px}
-.cart-total{display:flex;justify-content:space-between;align-items:center}
-.cart-total__label{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35)}
-.cart-total__val{font-family:var(--font-display);font-size:1.3rem;color:var(--color-dorado);letter-spacing:1px}
-.btn--cart-wa{background:#25D366;color:white;border:none;padding:14px;border-radius:var(--radius-sm);font-family:var(--font-body);font-weight:700;font-size:.9rem;cursor:pointer;transition:background 0.2s;width:100%}
-.btn--cart-wa:hover{background:#1da855}
-.btn--cart-clear{background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.3);padding:10px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.78rem;cursor:pointer;transition:all 0.2s;width:100%}
-.btn--cart-clear:hover{border-color:rgba(255,80,80,.4);color:rgba(255,80,80,.7)}
-/* BOTÓN AGREGAR EN TARJETA */
-.product-card__add{display:block;width:100%;margin-top:12px;padding:9px;background:rgba(209,176,77,.1);color:var(--color-dorado);border:1px solid rgba(209,176,77,.25);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.78rem;font-weight:600;letter-spacing:1px;cursor:pointer;transition:background var(--transition-fast),color var(--transition-fast)}
-.product-card__add:hover{background:var(--color-dorado);color:var(--color-gris-dark)}
-/* TOAST */
-@keyframes toastIn{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--color-gris-dark);border:1px solid var(--color-dorado);color:white;padding:10px 22px;border-radius:var(--radius-pill);font-size:.82rem;font-weight:500;z-index:3000;animation:toastIn .3s ease;white-space:nowrap;pointer-events:none}
-</style>
+<title>KAUCHO PLUS S.A.S. — Soluciones en caucho industrial</title>
+<meta name="description" content="KAUCHO PLUS S.A.S.: soluciones de caucho industrial de alta resistencia para minería, industria naval, construcción vial y procesos industriales. Guayaquil, Ecuador."/>
+<meta name="theme-color" content="#171721"/>
+<meta property="og:type" content="website"/><meta property="og:locale" content="es_EC"/>
+<meta property="og:title" content="KAUCHO PLUS S.A.S. — Soluciones en caucho industrial"/>
+<meta property="og:description" content="Piezas de caucho industrial de alta resistencia, fabricadas a la medida de su operación."/>
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="assets/style.css"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KAUCHO PLUS S.A.S.","telephone":"+593991863635","address":{"@type":"PostalAddress","addressLocality":"Guayaquil","addressCountry":"EC"}}</script>
 </head>
 <body>
+<a class="skip" href="#nosotros" data-i18n="skip">Ir al contenido</a>
 
 <header class="header" id="header">
-  <nav class="nav container">
-    <a href="#inicio" class="nav__logo">
-      <img src="images/logo.png" alt="Logo" style="height:36px;width:auto;filter:brightness(0) invert(1)" onerror="this.style.display='none'">
-      KAUCHO <span>PLUS</span> S.A.S
+  <nav class="nav container" aria-label="Principal">
+    <a href="#inicio" class="nav__logo" aria-label="KAUCHO PLUS S.A.S — inicio">
+      <img src="images/logo.png" alt="" style="filter:brightness(0) invert(1)" onerror="this.style.display='none'">
+      <span>KAUCHO PLUS <span class="long">S.A.S</span></span>
     </a>
     <ul class="nav__links">
-      <li><a href="#inicio"    class="nav__link" data-i18n="nav-inicio">Inicio</a></li>
-      <li><a href="#nosotros"  class="nav__link" data-i18n="nav-nosotros">Nosotros</a></li>
+      <li><a href="#inicio" class="nav__link" data-i18n="nav-inicio">Inicio</a></li>
+      <li><a href="#nosotros" class="nav__link" data-i18n="nav-nosotros">Nosotros</a></li>
       <li><a href="#servicios" class="nav__link" data-i18n="nav-servicios">Servicios</a></li>
       <li><a href="#productos" class="nav__link" data-i18n="nav-catalogo">Catálogo</a></li>
-      <li><a href="#contacto"  class="nav__link" data-i18n="nav-contacto">Contacto</a></li>
+      <li><a href="#contacto" class="nav__link" data-i18n="nav-contacto">Contacto</a></li>
     </ul>
     <div class="nav__right">
-      <button class="cart-btn" id="cartBtn" onclick="toggleCart()" aria-label="Carrito">
-        🛒<span class="cart-count" id="cartCount">0</span>
-      </button>
-      <div class="nav__lang">
-        <button class="lang-btn lang-btn--active" onclick="setLanguage('es')">ES</button>
-        <button class="lang-btn"                  onclick="setLanguage('en')">EN</button>
-      </div>
+      <button class="pill" id="cartBtn" aria-label="Carrito" aria-expanded="false" aria-controls="cartPanel">🛒<span class="cart-count" id="cartCount">0</span></button>
+      <button class="pill lang-btn" data-lang="es" aria-pressed="true" aria-label="Español">ES</button>
+      <button class="pill lang-btn" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
     </div>
   </nav>
 </header>
 
+<!-- Objeto conductor: un anillo de caucho (o-ring) que viaja por la página y se transforma en cada sección -->
+<div id="ring" aria-hidden="true">
+  <svg viewBox="0 0 200 200" fill="none" stroke="currentColor">
+    <circle cx="100" cy="100" r="78" stroke-width="14" opacity=".9"/>
+    <circle cx="100" cy="100" r="78" stroke-width="2" stroke="#70707d" transform="scale(1.13) translate(-14.2 -14.2)" opacity=".7"/>
+    <g class="teeth" style="opacity:0"><g stroke-width="10" stroke-linecap="round">
+      <path d="M100 6v22M100 172v22M6 100h22M172 100h22M33.5 33.5l15.5 15.5M151 151l15.5 15.5M166.5 33.5L151 49M49 151l-15.5 15.5"/></g></g>
+    <path class="arc" d="M100 58a42 42 0 1 1-.1 0" stroke-width="6" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" style="opacity:0"/>
+  </svg>
+</div>
+
+<main>
 <section class="hero" id="inicio">
   <div class="hero__bg" aria-hidden="true"></div>
-  <div class="hero__content container">
-    <span class="hero__eyebrow" data-i18n="hero-eyebrow">Especialistas en Caucho Industrial</span>
-    <h1 class="hero__title" data-i18n="hero-title">Soluciones <em>Premium</em><br>en Caucho Industrial</h1>
+  <span class="ring-slot" aria-hidden="true"></span>
+  <div class="hero__content">
+    <img class="hero__logo" src="logo.png" alt="Logo de KAUCHO PLUS" onerror="this.style.display='none'">
+    <span class="hero__tag" data-i18n="hero-eyebrow">Especialistas en Caucho Industrial</span>
+    <h1 class="hero__title" data-i18n="hero-title">Soluciones Premium<br>en Caucho Industrial</h1>
     <p class="hero__text" data-i18n="hero-text">Especialistas en minería, industria naval, construcción vial y procesos industriales complejos.</p>
-    <a class="btn btn--hero" href="https://wa.me/593991863635" target="_blank" rel="noopener" data-i18n="hero-cta">Solicitar cotización</a>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#contacto" data-i18n="hero-cta">Solicitar cotización</a>
+      <a class="btn btn--ghost" href="#productos" data-i18n="hero-cta2">Ver catálogo</a>
+    </div>
   </div>
-  <div class="hero__cut" aria-hidden="true"></div>
 </section>
 
-<section class="section section--dark" id="nosotros">
+<section class="section" id="nosotros">
   <div class="container">
     <div class="section__header">
-      <span class="section__label" data-i18n="sec-nosotros">Nuestra Empresa</span>
+      <span class="ring-slot" aria-hidden="true"></span>
+      <p class="muted" data-i18n="sec-nosotros">Nuestra Empresa</p>
       <h2 class="section__title" data-i18n="about-title">Quiénes Somos</h2>
       <p class="section__sub" data-i18n="about-sub">Más de una década liderando el mercado ecuatoriano de caucho industrial.</p>
     </div>
-    <div class="about-grid">
-      <article class="about-card">
-        <div class="about-card__icon">🎯</div>
-        <h3 class="about-card__title" data-i18n="mission-title">Misión</h3>
-        <p class="about-card__text" data-i18n="mission-text">Proveer soluciones integrales de caucho industrial de alta resistencia para optimizar la operatividad y extender la vida útil de los activos industriales.</p>
-      </article>
-      <article class="about-card">
-        <div class="about-card__icon">🔭</div>
-        <h3 class="about-card__title" data-i18n="vision-title">Visión</h3>
-        <p class="about-card__text" data-i18n="vision-text">Ser la empresa referente en soluciones de caucho industrial en Ecuador, reconocida por innovación, personalización y excelencia técnica.</p>
-      </article>
-      <article class="about-card">
-        <div class="about-card__icon">⚙️</div>
-        <h3 class="about-card__title" data-i18n="values-title">Valores</h3>
-        <p class="about-card__text" data-i18n="values-text">Calidad, compromiso y precisión técnica son los pilares de cada pieza que fabricamos. Cada cliente recibe atención personalizada y asesoría especializada.</p>
-      </article>
+    <div class="grid about-grid">
+      <article class="card about-card reveal"><div aria-hidden="true" style="font-size:2rem;margin-bottom:16px">🎯</div><h3 data-i18n="mission-title">Misión</h3><p data-i18n="mission-text">Proveer soluciones integrales de caucho industrial de alta resistencia para optimizar la operatividad y extender la vida útil de los activos industriales.</p></article>
+      <article class="card about-card reveal"><div aria-hidden="true" style="font-size:2rem;margin-bottom:16px">🔭</div><h3 data-i18n="vision-title">Visión</h3><p data-i18n="vision-text">Ser la empresa referente en soluciones de caucho industrial en Ecuador, reconocida por innovación, personalización y excelencia técnica.</p></article>
+      <article class="card about-card reveal"><div aria-hidden="true" style="font-size:2rem;margin-bottom:16px">⚙️</div><h3 data-i18n="values-title">Valores</h3><p data-i18n="values-text">Calidad, compromiso y precisión técnica son los pilares de cada pieza que fabricamos. Cada cliente recibe atención personalizada y asesoría especializada.</p></article>
     </div>
     <div class="stats">
-      <div class="stat"><span class="stat__num">20+</span><span class="stat__label" data-i18n="stat-productos">Productos</span></div>
-      <div class="stat"><span class="stat__num">100%</span><span class="stat__label" data-i18n="stat-custom">Personalizable</span></div>
-      <div class="stat"><span class="stat__num">🇪🇨</span><span class="stat__label" data-i18n="stat-pais">Ecuador</span></div>
+      <div class="card stat reveal"><span class="stat__num">20+</span><span class="stat__label" data-i18n="stat-productos">Productos</span></div>
+      <div class="card stat reveal"><span class="stat__num">100%</span><span class="stat__label" data-i18n="stat-custom">Personalizable</span></div>
+      <div class="card stat reveal"><span class="stat__num" aria-hidden="true">🇪🇨</span><span class="stat__label" data-i18n="stat-pais">Ecuador</span></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== SERVICIOS ===================== -->
-<section class="section section--light" id="servicios">
+<section class="section" id="servicios">
   <div class="container">
     <div class="section__header">
-      <span class="section__label" data-i18n="sec-servicios">Carta de Presentación</span>
-      <h2 class="section__title section__title--dark" data-i18n="serv-title">Servicio al Más Alto Nivel</h2>
-      <p class="section__sub section__sub--dark" data-i18n="serv-sub">El respaldo técnico y profesional que recibirá con nuestro servicio marca la diferencia. KAUCHO PLUS S.A.S cumple estándares enmarcados en un sistema de aseguramiento de calidad.</p>
+      <span class="ring-slot" aria-hidden="true"></span>
+      <p class="muted" data-i18n="sec-servicios">Carta de Presentación</p>
+      <h2 class="section__title" data-i18n="serv-title">Servicio al Más Alto Nivel</h2>
+      <p class="section__sub" data-i18n="serv-sub">El respaldo técnico y profesional que recibirá con nuestro servicio marca la diferencia. KAUCHO PLUS S.A.S cumple estándares enmarcados en un sistema de aseguramiento de calidad.</p>
     </div>
-    <div class="servicios-grid">
-      <div class="servicio-card">
-        <div class="servicio-card__icon">🏭</div>
-        <h3 class="servicio-card__title" data-i18n="serv1-title">Servicio en Planta</h3>
-        <ul class="servicio-card__list" data-i18n-list="serv1-list">
-          <li>Laminado y venta de caucho</li>
-          <li>Moldes y proceso de extrusión</li>
-          <li>Vulcanizado</li>
-          <li>Perfilería en cauchos</li>
-          <li>Construcción de defensas para barcos</li>
-        </ul>
-      </div>
-      <div class="servicio-card">
-        <div class="servicio-card__icon">⛏️</div>
-        <h3 class="servicio-card__title" data-i18n="serv2-title">Industria Minera</h3>
-        <ul class="servicio-card__list" data-i18n-list="serv2-list">
-          <li>Impulsores para tanques de lixiviado y agitadores</li>
-          <li>Impulsores para celda Denver</li>
-          <li>Difusores</li>
-          <li>Forros para bombas</li>
-          <li>Impulsores para bombas</li>
-          <li>Ejes con revestimiento de caucho</li>
-          <li>Planchas de caucho</li>
-          <li>O-ring, retenedores, matrimonios, bujes, acoples, empaques</li>
-        </ul>
-      </div>
-      <div class="servicio-card">
-        <div class="servicio-card__icon">🏗️</div>
-        <h3 class="servicio-card__title" data-i18n="serv3-title">Industria Civil</h3>
-        <ul class="servicio-card__list" data-i18n-list="serv3-list">
-          <li>Pisos de caucho</li>
-          <li>Reductor de velocidad tipo rectangular y tipo disco</li>
-          <li>Tope de caucho para parqueaderos</li>
-          <li>Juntas de dilatación para puentes</li>
-        </ul>
-      </div>
+    <div class="grid servicios-grid">
+      <div class="card servicio-card reveal"><div aria-hidden="true" style="font-size:2.2rem;margin-bottom:16px">🏭</div><h3 data-i18n="serv1-title">Servicio en Planta</h3>
+        <ul data-i18n-list="serv1-list"><li>Laminado y venta de caucho</li><li>Moldes y proceso de extrusión</li><li>Vulcanizado</li><li>Perfilería en cauchos</li><li>Construcción de defensas para barcos</li></ul></div>
+      <div class="card servicio-card reveal"><div aria-hidden="true" style="font-size:2.2rem;margin-bottom:16px">⛏️</div><h3 data-i18n="serv2-title">Industria Minera</h3>
+        <ul data-i18n-list="serv2-list"><li>Impulsores para tanques de lixiviado y agitadores</li><li>Impulsores para celda Denver</li><li>Difusores</li><li>Forros para bombas</li><li>Impulsores para bombas</li><li>Ejes con revestimiento de caucho</li><li>Planchas de caucho</li><li>O-ring, retenedores, matrimonios, bujes, acoples, empaques</li></ul></div>
+      <div class="card servicio-card reveal"><div aria-hidden="true" style="font-size:2.2rem;margin-bottom:16px">🏗️</div><h3 data-i18n="serv3-title">Industria Civil</h3>
+        <ul data-i18n-list="serv3-list"><li>Pisos de caucho</li><li>Reductor de velocidad tipo rectangular y tipo disco</li><li>Tope de caucho para parqueaderos</li><li>Juntas de dilatación para puentes</li></ul></div>
     </div>
   </div>
 </section>
-<!-- ===================================================== -->
 
-<section class="section section--dark" id="productos">
+<section class="section" id="productos">
   <div class="container">
     <div class="section__header">
-      <span class="section__label" data-i18n="sec-productos">Catálogo</span>
+      <span class="ring-slot" aria-hidden="true"></span>
+      <p class="muted" data-i18n="sec-productos">Catálogo</p>
       <h2 class="section__title" data-i18n="prod-title">Nuestros Productos</h2>
       <p class="section__sub" data-i18n="prod-sub">Piezas de caucho industrial de alta resistencia para cada necesidad.</p>
     </div>
-    <div class="search">
-      <input type="text" id="buscar" class="search__input" placeholder="Buscar producto..." autocomplete="off"/>
-      <span class="search__icon">🔍</span>
-    </div>
-    <div class="product-grid" id="catalogo" role="list"></div>
+    <div class="search"><input type="search" id="buscar" class="search__input" placeholder="Buscar producto..." data-i18n-ph="buscar-placeholder" aria-label="Buscar producto" autocomplete="off"/></div>
+    <div class="grid product-grid" id="catalogo" role="list"></div>
   </div>
 </section>
 
-<section class="section section--contact" id="contacto">
+<section class="section" id="contacto">
   <div class="container">
     <div class="section__header">
-      <span class="section__label" data-i18n="sec-contacto">Contáctanos</span>
-      <h2 class="section__title section__title--dark" data-i18n="contact-title">Hablemos</h2>
+      <span class="ring-slot" aria-hidden="true"></span>
+      <p class="muted" data-i18n="sec-contacto">Contáctanos</p>
+      <h2 class="section__title" data-i18n="contact-title">Hablemos</h2>
     </div>
     <div class="contact-wrap">
       <div class="contact-info">
-        <h3 class="contact-info__title" data-i18n="ci-title">¿Listo para una cotización?</h3>
-        <p class="contact-info__text" data-i18n="ci-text">Contáctenos y un especialista le asesorará sobre la solución de caucho más adecuada para su operación.</p>
+        <h3 data-i18n="ci-title">¿Listo para una cotización?</h3>
+        <p class="muted" data-i18n="ci-text">Contáctenos y un especialista le asesorará sobre la solución de caucho más adecuada para su operación.</p>
         <ul class="contact-details">
-          <li class="contact-detail"><span class="contact-detail__icon">📱</span><span>+593 99 186 3635</span></li>
-          <li class="contact-detail"><span class="contact-detail__icon">💬</span><span>WhatsApp disponible</span></li>
-          <li class="contact-detail"><span class="contact-detail__icon">🇪🇨</span><span>Guayaquil, Ecuador</span></li>
+          <li class="contact-detail"><span class="contact-detail__icon" aria-hidden="true">📱</span><a href="tel:+593991863635">+593 99 186 3635</a></li>
+          <li class="contact-detail"><span class="contact-detail__icon" aria-hidden="true">💬</span><span>WhatsApp disponible</span></li>
+          <li class="contact-detail"><span class="contact-detail__icon" aria-hidden="true">🇪🇨</span><span>Guayaquil, Ecuador</span></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="form-group">
-          <label class="form-label" for="inputName" data-i18n="lbl-name">Nombre</label>
-          <input type="text" id="inputName" class="form-input" placeholder="Su nombre completo" required/>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="inputCompany" data-i18n="lbl-company">Empresa</label>
-          <input type="text" id="inputCompany" class="form-input" placeholder="Nombre de su empresa"/>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="inputEmail" data-i18n="lbl-email">Correo electrónico</label>
-          <input type="email" id="inputEmail" class="form-input" placeholder="correo@empresa.com" required/>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="inputMsg" data-i18n="lbl-msg">Mensaje</label>
-          <textarea id="inputMsg" class="form-input form-input--textarea" placeholder="Cuéntenos su necesidad..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn--full" data-i18n="btn-send">Enviar por WhatsApp</button>
+      <form class="card contact-form" id="contactForm" novalidate>
+        <div class="form-group"><label class="form-label" for="inputName" data-i18n="lbl-name">Nombre</label>
+          <input type="text" id="inputName" class="form-input" placeholder="Su nombre completo" data-i18n-ph="ph-name" autocomplete="name" required/></div>
+        <div class="form-group"><label class="form-label" for="inputCompany" data-i18n="lbl-company">Empresa (opcional)</label>
+          <input type="text" id="inputCompany" class="form-input" placeholder="Nombre de su empresa" data-i18n-ph="ph-company" autocomplete="organization"/></div>
+        <div class="form-group"><label class="form-label" for="inputEmail" data-i18n="lbl-email">Correo electrónico (opcional)</label>
+          <input type="email" id="inputEmail" class="form-input" placeholder="correo@empresa.com" data-i18n-ph="ph-email" autocomplete="email"/></div>
+        <div class="form-group"><label class="form-label" for="inputMsg" data-i18n="lbl-msg">Mensaje</label>
+          <textarea id="inputMsg" class="form-input" placeholder="Cuéntenos su necesidad..." data-i18n-ph="ph-msg" required></textarea></div>
+        <label class="check"><input type="checkbox" id="chkTerms" name="terminos" aria-describedby="errTerms"/><span data-i18n="chk-terms">He leído y acepto los <a href="terminos.html" target="_blank" rel="noopener">Términos y condiciones</a>.</span></label>
+        <p class="field-error" id="errTerms" role="alert" data-i18n="err-terms">Debe aceptar los Términos y condiciones para enviar.</p>
+        <label class="check"><input type="checkbox" id="chkPriv" name="privacidad" aria-describedby="errPriv"/><span data-i18n="chk-priv">Declaro haber leído la <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a> y acepto el tratamiento de mis datos para responder a mi solicitud.</span></label>
+        <p class="field-error" id="errPriv" role="alert" data-i18n="err-priv">Debe aceptar la Política de privacidad para enviar.</p>
+        <p class="form-note" data-i18n="form-note">Al enviar, se abrirá WhatsApp con su mensaje ya escrito; usted decide si lo envía. Este sitio no guarda su mensaje en ningún servidor.</p>
+        <button type="submit" class="btn btn--primary btn--block" data-i18n="btn-send">Enviar por WhatsApp</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
 </section>
+</main>
 
 <footer class="footer">
-  <p>© 2026 <strong>KAUCHO PLUS S.A.S.</strong> — Todos los derechos reservados | Ecuador</p>
+  <div class="container">
+    <div class="footer__row">
+      <p>© 2026 <strong style="font-weight:480;color:var(--ivory)">KAUCHO PLUS S.A.S.</strong> — Todos los derechos reservados | Ecuador</p>
+      <nav class="footer__links" aria-label="Legal">
+        <a href="terminos.html" data-i18n="foot-t">Términos y condiciones</a>
+        <a href="privacidad.html" data-i18n="foot-p">Política de privacidad</a>
+        <a href="cookies.html" data-i18n="foot-c">Política de cookies</a>
+        <a href="reembolsos.html" data-i18n="foot-r">Reembolsos y devoluciones</a>
+        <a href="#" data-open-cookie-prefs onclick="return false" data-i18n="foot-pref">Preferencias de cookies</a>
+      </nav>
+    </div>
+  </div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/593991863635" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<a class="wa-float" href="https://wa.me/593991863635" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
-<!-- MODAL PRODUCTO -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-  <div class="modal" id="modal">
-    <button class="modal__close" onclick="closeModal()">✕</button>
+<div class="overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" id="modalClose" aria-label="Cerrar">✕</button>
     <div class="modal__gallery" id="modalGallery">
       <span class="fallback-icon" id="modalFallback"></span>
-      <button class="modal__nav modal__nav--prev hidden" id="modalPrev">&#8249;</button>
-      <button class="modal__nav modal__nav--next hidden" id="modalNext">&#8250;</button>
+      <button class="modal__nav modal__nav--prev hidden" id="modalPrev" aria-label="Anterior">&#8249;</button>
+      <button class="modal__nav modal__nav--next hidden" id="modalNext" aria-label="Siguiente">&#8250;</button>
       <div class="modal__thumbs" id="modalThumbs"></div>
     </div>
     <div class="modal__info">
-      <span class="modal__label">Alta resistencia</span>
+      <span class="muted" data-i18n="m-label">Alta resistencia</span>
       <h2 class="modal__title" id="modalTitle"></h2>
-      <span class="modal__badge" id="modalModelos"></span>
-      <p class="modal__desc">Solución en caucho de alta resistencia para aplicaciones industriales exigentes.</p>
-      <div class="modal__qty">
-        <label>Cantidad</label>
-        <div class="qty-ctrl">
-          <button class="qty-btn" onclick="changeQty(-1)">−</button>
-          <input type="number" class="qty-input" id="qtyInput" value="1" min="1"/>
-          <button class="qty-btn" onclick="changeQty(1)">+</button>
-        </div>
-      </div>
-      <p class="modal__note">* Los precios se coordinarán por WhatsApp según especificaciones.</p>
-      <div class="modal__actions">
-        <button class="btn--add" onclick="addFromModal()">🛒 Agregar al carrito</button>
-        <button class="btn--wa" onclick="cotizarWa()">💬 Cotizar por WhatsApp</button>
-      </div>
+      <span class="product-card__badge" id="modalModelos"></span>
+      <p class="muted" data-i18n="prod-desc">Solución en caucho de alta resistencia para aplicaciones industriales exigentes.</p>
+      <div class="modal__qty"><label for="qtyInput" class="muted" data-i18n="m-qty">Cantidad</label>
+        <div class="qty-ctrl"><button class="qty-btn" id="qtyMinus" aria-label="Menos">−</button><input type="number" class="qty-input" id="qtyInput" value="1" min="1"/><button class="qty-btn" id="qtyPlus" aria-label="Más">+</button></div></div>
+      <p class="muted" style="font-size:14px" data-i18n="m-note">* Los precios se coordinarán por WhatsApp según especificaciones.</p>
+      <div class="modal__actions"><button class="btn btn--primary" id="modalAdd" data-i18n="add">🛒 Agregar al carrito</button><button class="btn btn--ghost" id="modalWa" data-i18n="m-wa">💬 Cotizar por WhatsApp</button></div>
     </div>
   </div>
 </div>
 
-<!-- PANEL CARRITO -->
-<div class="cart-panel" id="cartPanel">
-  <div class="cart-panel__head">
-    <span class="cart-panel__title">Mi Carrito</span>
-    <button class="cart-panel__close" onclick="toggleCart()">✕</button>
-  </div>
+<aside class="cart-panel" id="cartPanel" aria-label="Carrito">
+  <div class="cart-panel__head"><span class="cart-panel__title" data-i18n="cart-title">Mi Carrito</span><button class="pill" id="cartClose" aria-label="Cerrar">✕</button></div>
   <div class="cart-panel__body" id="cartBody"></div>
   <div class="cart-panel__foot" id="cartFoot" style="display:none">
-    <div class="cart-total">
-      <span class="cart-total__label">Productos seleccionados</span>
-      <span class="cart-total__val" id="cartTotal">0</span>
-    </div>
-    <button class="btn--cart-wa" onclick="enviarCarritoWa()">💬 Enviar lista por WhatsApp</button>
-    <button class="btn--cart-clear" onclick="clearCart()">Vaciar carrito</button>
+    <div class="cart-total"><span data-i18n="cart-sel">Productos seleccionados</span><b id="cartTotal" style="color:var(--ivory);font-weight:480">0</b></div>
+    <p class="form-note" style="margin:0" data-i18n="cart-note">Se abrirá WhatsApp con su lista; este sitio no almacena datos personales. Ver <a href="privacidad.html" style="text-decoration:underline">Política de privacidad</a>.</p>
+    <button class="btn btn--primary" id="cartSend" data-i18n="cart-send">💬 Enviar lista por WhatsApp</button>
+    <button class="btn btn--ghost" id="cartClear" data-i18n="cart-clear">Vaciar carrito</button>
   </div>
-</div>
+</aside>
 
-
-<script>
-'use strict';
-
-const PRODUCTOS=[
-  {es:'Bases',en:'Bases',icono:'🏗️',modelos:4,
-    imgs:['bases.jpeg','bases_2.jpg','bases_3.jpg','bases_4.jpg']},
-  {es:'Celda Serrano',en:'Serrano Cell',icono:'🔲',modelos:1,
-    imgs:['celda_serrano.jpg']},
-  {es:'Dedos de Pollo',en:'Chicken Fingers',icono:'🦾',modelos:4,
-    imgs:['pelapollos.png','pelapollos_2.png','pelapollos_3.png','pelapollos_4.png']},
-  {es:'Defensa',en:'Fender',icono:'🛡️',modelos:4,
-    imgs:['defensa.jpg','defensa_2.jpg','defensa_3.jpg','defensa_4.jpg']},
-  {es:'Codo Revés',en:'Reverse Elbow',icono:'↩️',modelos:1,
-    imgs:['codo_reves.jpg']},
-  {es:'Faldón',en:'Skirt',icono:'📐',modelos:1,
-    imgs:['faldon.jpg']},
-  {es:'Impulsores',en:'Impellers',icono:'⚙️',modelos:9,
-    imgs:['impulsores.jpg','impulsores_2.jpg','impulsores_3.jpg','impulsores_4.jpg','impulsores_5.jpg','impulsores_6.jpg','impulsores_7.jpg','impulsores_8.jpg','impulsores_9.jpg']},
-  {es:'Juntas',en:'Joints',icono:'🔗',modelos:2,
-    imgs:['juntas.jpg','juntas_2.jpg','juntas_3.jpg','juntas_4.jpg','juntas_5.jpg']},
-  {es:'Perfil',en:'Profile',icono:'📏',modelos:5,
-    imgs:['perfil.jpg','perfil_2.jpg','perfil_3.jpg','perfil_4.jpg','perfil_5.jpg']},
-  {es:'Pieza',en:'Part',icono:'🧩',modelos:1,
-    imgs:['pieza.jpg']},
-  {es:'Placa',en:'Plate',icono:'🟫',modelos:1,
-    imgs:['placa.jpg']},
-  {es:'Poleas',en:'Pulleys',icono:'⭕',modelos:1,
-    imgs:['poleas.jpg']},
-  {es:'Tanque',en:'Tank',icono:'🛢️',modelos:1,
-    imgs:['tanque.jpg']},
-  {es:'Difusor',en:'Diffuser',icono:'💨',modelos:2,
-    imgs:['difusor.jpg','difusor_2.jpg']},
-  {es:'Eje de Caucho',en:'Rubber Shaft',icono:'🪛',modelos:1,
-    imgs:['eje_caucho.jpg']},
-  {es:'Topes',en:'Stops',icono:'🛑',modelos:2,
-    imgs:['topes.jpg','topes_2.jpg']},
-  {es:'Válvulas',en:'Valves',icono:'🚿',modelos:1,
-    imgs:['valvulas.jpg']},
-  {es:'Aletas',en:'Fins',icono:'🪁',modelos:2,
-    imgs:['aleta.jpg','aleta_2.jpg']},
-  {es:'Malla Zaranda',en:'Screen Mesh',icono:'🕸️',modelos:1,
-    imgs:['malla_zaranda.jpg']},
-  {es:'Revestimientos',en:'Liners',icono:'🧱',modelos:1,
-    imgs:['revestimientos.jpg']},
-  {es:'Spot',en:'Spot',icono:'🔵',modelos:1,
-    imgs:['spot.jpg']},
-  {es:'Aplex',en:'Aplex',icono:'🔩',modelos:1,
-    imgs:['aplex.jpg']},
-  {es:'Perfil de caucho tipo U',en:'U-shaped rubber profile',icono:'U',modelos:1,
-    imgs:['perfil_u.jpg']},
-];
-
-const SERVICIOS_LISTAS={
-  es:{
-    'serv1-list':['Laminado y venta de caucho','Moldes y proceso de extrusión','Vulcanizado','Perfilería en cauchos','Construcción de defensas para barcos'],
-    'serv2-list':['Impulsores para tanques de lixiviado y agitadores','Impulsores para celda Denver','Difusores','Forros para bombas','Impulsores para bombas','Ejes con revestimiento de caucho','Planchas de caucho','O-ring, retenedores, matrimonios, bujes, acoples, empaques'],
-    'serv3-list':['Pisos de caucho','Reductor de velocidad tipo rectangular y tipo disco','Tope de caucho para parqueaderos','Juntas de dilatación para puentes'],
-  },
-  en:{
-    'serv1-list':['Rubber lamination and sales','Molds and extrusion process','Vulcanization','Rubber profiling','Construction of ship fenders'],
-    'serv2-list':['Impellers for leaching tanks and agitators','Impellers for Denver cell','Diffusers','Pump liners','Pump impellers','Rubber-coated shafts','Rubber sheets','O-rings, retainers, couplings, bushings, gaskets'],
-    'serv3-list':['Rubber flooring','Speed bumps (rectangular and disc type)','Rubber parking stops','Expansion joints for bridges'],
-  }
-};
-
-const TRADUCCIONES={
-  es:{
-    'nav-inicio':'Inicio','nav-nosotros':'Nosotros','nav-servicios':'Servicios','nav-catalogo':'Catálogo','nav-contacto':'Contacto',
-    'hero-eyebrow':'Especialistas en Caucho Industrial',
-    'hero-title':'Soluciones <em>Premium</em><br>en Caucho Industrial',
-    'hero-text':'Especialistas en minería, industria naval, construcción vial y procesos industriales complejos.',
-    'hero-cta':'Solicitar cotización',
-    'sec-nosotros':'Nuestra Empresa','about-title':'Quiénes Somos',
-    'about-sub':'Una empresa dedicada a construir productos de calidad.',
-    'mission-title':'Misión','mission-text':'Proveer soluciones integrales de caucho industrial de alta resistencia para optimizar la operatividad y extender la vida útil de los activos industriales.',
-    'vision-title':'Visión','vision-text':'Ser la empresa referente en soluciones de caucho industrial en Ecuador, reconocida por innovación, personalización y excelencia técnica.',
-    'values-title':'Valores','values-text':'Calidad, compromiso y precisión técnica son los pilares de cada pieza que fabricamos. Cada cliente recibe atención personalizada y asesoría especializada.',
-    'stat-productos':'Productos','stat-anos':'Años de experiencia','stat-custom':'Personalizable','stat-pais':'Ecuador',
-    'sec-servicios':'Carta de Presentación','serv-title':'Servicio al Más Alto Nivel del País',
-    'serv-sub':'El respaldo técnico y profesional que recibirá con nuestro servicio marca la diferencia. KAUCHO PLUS S.A.S cumple estándares enmarcados en un sistema de aseguramiento de calidad.',
-    'serv1-title':'Servicio en Planta','serv2-title':'Industria Minera','serv3-title':'Industria Civil',
-    'sec-productos':'Catálogo','prod-title':'Nuestros Productos',
-    'prod-sub':'Piezas de caucho industrial de alta resistencia para cada necesidad.',
-    'buscar-placeholder':'Buscar producto...','prod-badge':'Alta resistencia',
-    'prod-desc':'Solución en caucho de alta resistencia para aplicaciones industriales exigentes.',
-    'prod-modelos-1':'Modelo único','prod-modelos-n':'modelos disponibles',
-    'sec-contacto':'Contáctanos','contact-title':'Hablemos',
-    'ci-title':'¿Listo para una cotización?',
-    'ci-text':'Contáctenos y un especialista le asesorará sobre la solución de caucho más adecuada para su operación.',
-    'lbl-name':'Nombre','lbl-company':'Empresa','lbl-email':'Correo electrónico','lbl-msg':'Mensaje',
-    'btn-send':'Enviar por WhatsApp',
-    'ph-name':'Su nombre completo','ph-company':'Nombre de su empresa','ph-email':'correo@empresa.com','ph-msg':'Cuéntenos su necesidad...',
-  },
-  en:{
-    'nav-inicio':'Home','nav-nosotros':'About','nav-servicios':'Services','nav-catalogo':'Catalog','nav-contacto':'Contact',
-    'hero-eyebrow':'Industrial Rubber Specialists',
-    'hero-title':'Premium <em>Industrial</em><br>Rubber Solutions',
-    'hero-text':'Specialists in mining, marine industry, road construction and complex industrial processes.',
-    'hero-cta':'Request a quote',
-    'sec-nosotros':'Our Company','about-title':'Who We Are',
-    'about-sub':'Over a decade leading the Ecuadorian industrial rubber market.',
-    'mission-title':'Mission','mission-text':'Provide comprehensive high-resistance industrial rubber solutions to optimize operations and extend the useful life of industrial assets.',
-    'vision-title':'Vision','vision-text':'To be the leading industrial rubber solutions company in Ecuador, recognized for innovation, customization, and technical excellence.',
-    'values-title':'Values','values-text':'Quality, commitment, and technical precision are the pillars of every piece we manufacture. Each client receives personalized attention and specialized advice.',
-    'stat-productos':'Products','stat-anos':'Years of experience','stat-custom':'Customizable','stat-pais':'Ecuador',
-    'sec-servicios':'Presentation Letter','serv-title':'Service at the Highest Level',
-    'serv-sub':'The technical and professional support you will receive with our service makes the difference. KAUCHO PLUS S.A.S meets standards within a quality assurance system.',
-    'serv1-title':'Plant Services','serv2-title':'Mining Industry','serv3-title':'Civil Industry',
-    'sec-productos':'Catalog','prod-title':'Our Products',
-    'prod-sub':'High-resistance industrial rubber parts for every need.',
-    'buscar-placeholder':'Search product...','prod-badge':'High resistance',
-    'prod-desc':'High-resistance rubber solution for demanding industrial applications.',
-    'prod-modelos-1':'Single model','prod-modelos-n':'models available',
-    'sec-contacto':'Contact','contact-title':"Let's Talk",
-    'ci-title':'Ready for a quote?',
-    'ci-text':'Contact us and a specialist will advise you on the most suitable rubber solution for your operation.',
-    'lbl-name':'Name','lbl-company':'Company','lbl-email':'Email address','lbl-msg':'Message',
-    'btn-send':'Send via WhatsApp',
-    'ph-name':'Your full name','ph-company':'Your company name','ph-email':'email@company.com','ph-msg':'Tell us about your need...',
-  }
-};
-
-let currentLang='es';
-
-function renderProductos(lang, filtro) {
-  const grid = document.getElementById('catalogo');
-  const t = TRADUCCIONES[lang];
-  const query = (filtro || '').toLowerCase().trim();
-  const visibles = PRODUCTOS.filter(p => p[lang].toLowerCase().includes(query));
-  grid.innerHTML = '';
-  if (!visibles.length) {
-    grid.innerHTML = '<p style="text-align:center;color:rgba(255,255,255,.4);grid-column:1/-1;padding:40px 0">No se encontraron productos.</p>';
-    return;
-  }
-  visibles.forEach(function(p) {
-    const modelosTexto = p.modelos === 1 ? t['prod-modelos-1'] : p.modelos + ' ' + t['prod-modelos-n'];
-    const imgs = p.imgs && p.imgs.length ? p.imgs : [];
-    const soloUna = imgs.length <= 1;
-    const imgsHtml = imgs.length
-      ? imgs.map((src, i) => `<img src="${src}" alt="${p[lang]}" class="${i===0?'active':''}" onerror="this.style.display='none'">`).join('')
-      : `<span class="fallback-icon">${p.icono}</span>`;
-    const dotsHtml = imgs.length > 1
-      ? `<div class="carousel-dots">${imgs.map((_,i)=>`<button class="carousel-dot${i===0?' active':''}" data-idx="${i}"></button>`).join('')}</div>`
-      : '';
-    const card = document.createElement('article');
-    card.className = 'product-card';
-    card.innerHTML =
-      `<div class="product-card__img">
-        ${imgsHtml}
-        <button class="carousel-btn carousel-btn--prev${soloUna?' hidden':''}" data-dir="-1">&#8249;</button>
-        <button class="carousel-btn carousel-btn--next${soloUna?' hidden':''}" data-dir="1">&#8250;</button>
-        ${dotsHtml}
-      </div>
-      <div class="product-card__body">
-        <h3 class="product-card__title">${p[lang]}</h3>
-        <p class="product-card__desc">${t['prod-desc']}</p>
-        <span class="product-card__badge">${t['prod-badge']} · ${modelosTexto}</span>
-        <button class="product-card__add">🛒 Agregar al carrito</button>
-      </div>`;
-    if (!soloUna) {
-      const imgEls = card.querySelectorAll('.product-card__img img');
-      const dots   = card.querySelectorAll('.carousel-dot');
-      let cur = 0;
-      function goTo(n) {
-        imgEls[cur].classList.remove('active'); dots[cur].classList.remove('active');
-        cur = (n + imgEls.length) % imgEls.length;
-        imgEls[cur].classList.add('active'); dots[cur].classList.add('active');
-      }
-      card.querySelectorAll('.carousel-btn').forEach(btn => {
-        btn.addEventListener('click', e => { e.stopPropagation(); goTo(cur + (+btn.dataset.dir)); });
-      });
-      dots.forEach(dot => dot.addEventListener('click', e => { e.stopPropagation(); goTo(+dot.dataset.idx); }));
-    }
-    card.querySelector('.product-card__img').addEventListener('click', () => openModal(p));
-    card.querySelector('.product-card__title').addEventListener('click', () => openModal(p));
-    card.querySelector('.product-card__add').addEventListener('click', e => { e.stopPropagation(); addToCart(p, 1); });
-    grid.appendChild(card);
-  });
-}
-
-function renderServicios(lang){
-  const listas=SERVICIOS_LISTAS[lang];
-  document.querySelectorAll('[data-i18n-list]').forEach(function(ul){
-    const clave=ul.getAttribute('data-i18n-list');
-    if(!listas[clave])return;
-    ul.innerHTML=listas[clave].map(function(item){return'<li>'+item+'</li>';}).join('');
-  });
-}
-
-/* ── MODAL ── */
-let productoActual = null;
-let modalImgIdx = 0;
-
-function openModal(p) {
-  productoActual = p;
-  const imgs = p.imgs && p.imgs.length ? p.imgs : [];
-  modalImgIdx = 0;
-  const t = TRADUCCIONES[currentLang];
-  document.getElementById('modalTitle').textContent = p[currentLang];
-  document.getElementById('modalModelos').textContent = p.modelos === 1 ? t['prod-modelos-1'] : p.modelos + ' ' + t['prod-modelos-n'];
-  document.getElementById('qtyInput').value = 1;
-  const gallery = document.getElementById('modalGallery');
-  gallery.querySelectorAll('img').forEach(i => i.remove());
-  document.getElementById('modalFallback').textContent = imgs.length ? '' : p.icono;
-  if (imgs.length) {
-    imgs.forEach((src, i) => {
-      const img = document.createElement('img');
-      img.src = src; img.alt = p[currentLang];
-      if (i === 0) img.classList.add('active');
-      gallery.insertBefore(img, document.getElementById('modalPrev'));
-    });
-  }
-  document.getElementById('modalPrev').classList.toggle('hidden', imgs.length <= 1);
-  document.getElementById('modalNext').classList.toggle('hidden', imgs.length <= 1);
-  const thumbs = document.getElementById('modalThumbs');
-  thumbs.innerHTML = '';
-  if (imgs.length > 1) {
-    imgs.forEach((src, i) => {
-      const th = document.createElement('div');
-      th.className = 'modal__thumb' + (i === 0 ? ' active' : '');
-      th.innerHTML = `<img src="${src}" alt="">`;
-      th.addEventListener('click', () => modalGoTo(i));
-      thumbs.appendChild(th);
-    });
-  }
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function modalGoTo(n) {
-  const imgs  = document.querySelectorAll('#modalGallery img');
-  const thumbs = document.querySelectorAll('.modal__thumb');
-  if (imgs[modalImgIdx])  imgs[modalImgIdx].classList.remove('active');
-  if (thumbs[modalImgIdx]) thumbs[modalImgIdx].classList.remove('active');
-  modalImgIdx = (n + imgs.length) % imgs.length;
-  if (imgs[modalImgIdx])  imgs[modalImgIdx].classList.add('active');
-  if (thumbs[modalImgIdx]) thumbs[modalImgIdx].classList.add('active');
-}
-
-document.getElementById('modalPrev').addEventListener('click', () => modalGoTo(modalImgIdx - 1));
-document.getElementById('modalNext').addEventListener('click', () => modalGoTo(modalImgIdx + 1));
-
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeModalOutside(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
-function changeQty(d) {
-  const i = document.getElementById('qtyInput');
-  i.value = Math.max(1, +i.value + d);
-}
-function addFromModal() {
-  if (!productoActual) return;
-  addToCart(productoActual, +document.getElementById('qtyInput').value);
-  closeModal();
-}
-function cotizarWa() {
-  if (!productoActual) return;
-  const qty = document.getElementById('qtyInput').value;
-  const msg = `¡Hola KAUCHO PLUS S.A.S!\n\nQuisiera cotizar:\n• ${productoActual[currentLang]} × ${qty} unidad(es)\n\n¿Me pueden dar información de precio y disponibilidad?`;
-  window.open('https://wa.me/593991863635?text=' + encodeURIComponent(msg), '_blank', 'noopener');
-}
-
-/* ── CARRITO ── */
-let carrito = [];
-
-function addToCart(p, qty) {
-  const idx = carrito.findIndex(i => i.es === p.es);
-  if (idx > -1) { carrito[idx].qty += qty; } else { carrito.push({...p, qty}); }
-  renderCart();
-  showToast('✅ Agregado: ' + p[currentLang]);
-}
-function removeFromCart(idx) { carrito.splice(idx, 1); renderCart(); }
-function clearCart() { carrito = []; renderCart(); }
-
-function renderCart() {
-  const body  = document.getElementById('cartBody');
-  const foot  = document.getElementById('cartFoot');
-  const count = document.getElementById('cartCount');
-  const total = carrito.reduce((s, i) => s + i.qty, 0);
-  count.textContent = total;
-  count.classList.toggle('visible', total > 0);
-  document.getElementById('cartTotal').textContent = total;
-  foot.style.display = carrito.length ? 'flex' : 'none';
-  if (!carrito.length) { body.innerHTML = '<div class="cart-empty"><span>🛒</span>Tu carrito está vacío</div>'; return; }
-  body.innerHTML = '';
-  carrito.forEach((item, idx) => {
-    const imgSrc = item.imgs && item.imgs[0] ? item.imgs[0] : '';
-    const div = document.createElement('div');
-    div.className = 'cart-item';
-    div.innerHTML =
-      `<div class="cart-item__img">${imgSrc ? `<img src="${imgSrc}" alt="">` : '<span>' + item.icono + '</span>'}</div>` +
-      `<div class="cart-item__info"><div class="cart-item__name">${item[currentLang]}</div><div class="cart-item__qty">× ${item.qty} unidad(es)</div></div>` +
-      `<button class="cart-item__remove" onclick="removeFromCart(${idx})">✕</button>`;
-    body.appendChild(div);
-  });
-}
-function toggleCart() { document.getElementById('cartPanel').classList.toggle('open'); }
-function enviarCarritoWa() {
-  if (!carrito.length) return;
-  const lista = carrito.map(i => `• ${i[currentLang]} × ${i.qty}`).join('\n');
-  const msg = `¡Hola KAUCHO PLUS S.A.S!\n\nQuisiera cotizar:\n\n${lista}\n\n¿Me pueden dar precios y disponibilidad?`;
-  window.open('https://wa.me/593991863635?text=' + encodeURIComponent(msg), '_blank', 'noopener');
-}
-
-/* ── TOAST ── */
-function showToast(msg) {
-  const t = document.createElement('div');
-  t.className = 'toast'; t.textContent = msg;
-  document.body.appendChild(t);
-  setTimeout(() => t.remove(), 2500);
-}
-
-function filtrar(){
-  renderProductos(currentLang,document.getElementById('buscar').value);
-}
-
-function setLanguage(lang){
-  currentLang=lang;
-  const t=TRADUCCIONES[lang];
-  document.querySelectorAll('.lang-btn').forEach(function(btn,i){
-    btn.classList.toggle('lang-btn--active',(i===0&&lang==='es')||(i===1&&lang==='en'));
-  });
-  document.querySelectorAll('[data-i18n]').forEach(function(el){
-    const clave=el.getAttribute('data-i18n');
-    if(!t[clave])return;
-    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=t[clave];}
-    else{el.innerHTML=t[clave];}
-  });
-  const b=document.getElementById('buscar');
-  if(b)b.placeholder=t['buscar-placeholder'];
-  ['inputName','inputCompany','inputEmail','inputMsg'].forEach(function(id){
-    const map={inputName:'ph-name',inputCompany:'ph-company',inputEmail:'ph-email',inputMsg:'ph-msg'};
-    const el=document.getElementById(id);
-    if(el)el.placeholder=t[map[id]];
-  });
-  renderServicios(lang);
-  renderProductos(lang,b?b.value:'');
-  renderCart();
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-}
-
-function manejarFormulario(e){
-  e.preventDefault();
-  const nombre=document.getElementById('inputName').value.trim();
-  const empresa=document.getElementById('inputCompany').value.trim();
-  const correo=document.getElementById('inputEmail').value.trim();
-  const mensaje=document.getElementById('inputMsg').value.trim();
-  if(!nombre||!correo||!mensaje){
-    alert(currentLang==='es'?'Por favor complete los campos obligatorios.':'Please fill in the required fields.');
-    return;
-  }
-  const texto='¡Hola KAUCHO PLUS S.A.S!\n\nNombre: '+nombre+'\n'+(empresa?'Empresa: '+empresa+'\n':'')+'Correo: '+correo+'\n\nMensaje:\n'+mensaje;
-  window.open('https://wa.me/593991863635?text='+encodeURIComponent(texto),'_blank','noopener');
-}
-
-document.addEventListener('DOMContentLoaded',function(){
-  renderProductos('es','');
-  window.addEventListener('scroll',function(){
-    document.getElementById('header').classList.toggle('header--scrolled',window.scrollY>60);
-  },{passive:true});
-  const f=document.getElementById('contactForm');
-  if(f)f.addEventListener('submit',manejarFormulario);
-  const b=document.getElementById('buscar');
-  if(b)b.addEventListener('input',filtrar);
-});
-</script>
+<script src="assets/consent.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>
-
